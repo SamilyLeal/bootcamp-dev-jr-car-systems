@@ -13,6 +13,7 @@ import { CarComponent } from '../car/car.component';
 export class CarsComponent {
   count = 5;
   car: Car = {} as Car;
+  isUpdated = false;
 
   cars: Car[] = [
     {
@@ -46,9 +47,18 @@ export class CarsComponent {
   ];
 
   save(){
+    if(!this.isUpdated){
       this.car.id = this.count;
       this.count++;
       this.cars.push(this.car);
-      this.car = {} as Car;
+    }
+
+    this.car = {} as Car;
+    this.isUpdated = false;
+  }
+
+  update(currentCar: Car){
+    this.car = currentCar;
+    this.isUpdated = true;
   }
 }
