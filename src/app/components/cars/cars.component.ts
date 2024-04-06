@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { Car } from '../../models/Car';
 import { CommonModule } from '@angular/common';
+import { CarComponent } from '../car/car.component';
 
 @Component({
   selector: 'app-cars',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CarComponent],
   templateUrl: './cars.component.html',
   styleUrl: './cars.component.css'
 })
 export class CarsComponent {
+  count = 5;
+  car: Car = {} as Car;
+
   cars: Car[] = [
     {
       id: 1,
@@ -40,4 +44,11 @@ export class CarsComponent {
       year: 2014
     }
   ];
+
+  save(){
+      this.car.id = this.count;
+      this.count++;
+      this.cars.push(this.car);
+      this.car = {} as Car;
+  }
 }

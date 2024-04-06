@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Car } from '../../models/Car';
 import { FormsModule } from '@angular/forms';
 
@@ -10,5 +10,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './car.component.css'
 })
 export class CarComponent {
+  @Input()
   car: Car = {} as Car;
+
+  @Output()
+  saveEmitter = new EventEmitter();
+  
+  save(){
+    this.saveEmitter.emit();
+  }
 }

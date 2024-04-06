@@ -1,4 +1,5 @@
-
+<div class="bg-light container p-2">
+    <app-car [car]="car" (saveEmitter)="save()"></app-car>
     <div class="container mt-3">
         <table class="table table-light">
             <thead>
@@ -19,10 +20,11 @@
                     <td>{{car.price}}</td>
                     <td>{{car.year}}</td>
                     <td class="text-end">
-                        <button class="btn btn-success me-2" >Alterar</button>
-                        <button class="btn btn-danger" >Remover</button>
+                        <button class="btn btn-success me-2">Alterar</button>
+                        <button class="btn btn-danger">Remover</button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+</div>
