@@ -24,6 +24,20 @@ export class CarsComponent {
       make: "mitsubishi",
       price: 49900,
       year: 2014
+    },
+    {
+      id: 3,
+      model: "lancer",
+      make: "mitsubishi",
+      price: 49900,
+      year: 2014
+    },
+    {
+      id: 4,
+      model: "lancer",
+      make: "mitsubishi",
+      price: 49900,
+      year: 2014
     }
   ];
 }
